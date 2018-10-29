@@ -28,6 +28,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -405,14 +406,7 @@ public class ReferenceManager
         MessageDigest digest = MessageDigest.getInstance("MD5");
 
         byte[] dig;
-        try
-        {
-            dig = digest.digest( pageName.getBytes("UTF-8") );
-        }
-        catch (UnsupportedEncodingException e)
-        {
-            throw new InternalWikiException("AAAAGH!  UTF-8 is gone!  My eyes!  It burns...!", e);
-        }
+        dig = digest.digest( pageName.getBytes(StandardCharsets.UTF_8) );
 
         return TextUtil.toHexString(dig)+".cache";
     }

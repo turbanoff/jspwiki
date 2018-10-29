@@ -21,6 +21,7 @@ package org.apache.wiki.util;
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
 import java.util.Properties;
 import java.util.Random;
@@ -155,12 +156,8 @@ public final class TextUtil {
 
         byte[] rs;
 
-        try {
-            rs = text.getBytes( "UTF-8" );
-            return urlEncode( rs );
-        } catch( UnsupportedEncodingException uee ) {
-            throw new UnsupportedOperationException( "UTF-8 not supported!?!", uee );
-        }
+        rs = text.getBytes(StandardCharsets.UTF_8);
+        return urlEncode( rs );
     }
 
     /**
@@ -175,7 +172,7 @@ public final class TextUtil {
         if( utf8 == null ) return null;
 
         try {
-            rs = urlDecode( utf8.getBytes( "ISO-8859-1" ), "UTF-8" );
+            rs = urlDecode( utf8.getBytes(StandardCharsets.ISO_8859_1), "UTF-8" );
         } catch( UnsupportedEncodingException uee ) {
             throw new UnsupportedOperationException( "UTF-8 or ISO-8859-1 not supported!?!", uee );
         }

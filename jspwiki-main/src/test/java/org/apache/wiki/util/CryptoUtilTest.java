@@ -21,6 +21,7 @@ package org.apache.wiki.util;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 
 import org.apache.commons.codec.binary.Base64;
 import org.junit.jupiter.api.Assertions;
@@ -158,7 +159,7 @@ public class CryptoUtilTest
         byte[] password;
 
         // Verify with a known digest
-        password = "testing123".getBytes("UTF-8");
+        password = "testing123".getBytes(StandardCharsets.UTF_8);
         Assertions.assertTrue( CryptoUtil.verifySaltedPassword( password, "{SSHA}yfT8SRT/WoOuNuA6KbJeF10OznZmb28=" ) );
 
         // Verify with two more known digests

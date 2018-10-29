@@ -23,6 +23,7 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 import org.apache.log4j.PropertyConfigurator;
@@ -54,7 +55,7 @@ public class FileUtilTest
     {
         String src = "abc\u00e4\u00e5\u00a6";
 
-        String res = new String( src.getBytes("ISO-8859-1"), "ISO-8859-1" );
+        String res = new String( src.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.ISO_8859_1);
 
         Assertions.assertEquals( src, res );
     }
@@ -65,7 +66,7 @@ public class FileUtilTest
     {
         String src = "abc\u00e4\u00e5\u00a6";
 
-        String res = FileUtil.readContents( new ByteArrayInputStream( src.getBytes("ISO-8859-1") ),
+        String res = FileUtil.readContents( new ByteArrayInputStream( src.getBytes(StandardCharsets.ISO_8859_1) ),
                                             "ISO-8859-1" );
 
         Assertions.assertEquals( src, res );
@@ -80,7 +81,7 @@ public class FileUtilTest
     {
         String src = "abc\u00e4\u00e5\u00a6def";
 
-        String res = FileUtil.readContents( new ByteArrayInputStream( src.getBytes("ISO-8859-1") ),
+        String res = FileUtil.readContents( new ByteArrayInputStream( src.getBytes(StandardCharsets.ISO_8859_1) ),
                                             "UTF-8" );
 
         Assertions.assertEquals( src, res );

@@ -18,7 +18,7 @@
  */
 package org.apache.wiki.parser;
 
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
@@ -514,7 +514,7 @@ public class CreoleToJSPWikiTranslator
             {
                 MessageDigest digest = MessageDigest.getInstance("MD5");
                 digest.reset();
-                digest.update(protectedMarkup.getBytes("UTF-8"));
+                digest.update(protectedMarkup.getBytes(StandardCharsets.UTF_8));
                 String hash = bytesToHash(digest.digest());
                 matcher.appendReplacement(result, hash);
                 c_protectionMap.put(hash, protectedMarkup);
@@ -523,11 +523,6 @@ public class CreoleToJSPWikiTranslator
             catch (NoSuchAlgorithmException e)
             {
                 // FIXME: Should log properly
-                e.printStackTrace();
-            }
-            catch (UnsupportedEncodingException e)
-            {
-                // FIXME: Auto-generated catch block
                 e.printStackTrace();
             }
         }

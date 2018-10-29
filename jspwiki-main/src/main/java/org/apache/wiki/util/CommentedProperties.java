@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.Reader;
+import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -69,7 +70,7 @@ public class CommentedProperties extends Properties
         m_propertyString = FileUtil.readContents( inStream, "ISO-8859-1" );
 
         // Now load it into the properties object as normal
-        super.load( new ByteArrayInputStream( m_propertyString.getBytes("ISO-8859-1") ) );
+        super.load( new ByteArrayInputStream( m_propertyString.getBytes(StandardCharsets.ISO_8859_1) ) );
     }
 
     /**
@@ -83,7 +84,7 @@ public class CommentedProperties extends Properties
         m_propertyString = FileUtil.readContents( in );
 
         // Now load it into the properties object as normal
-        super.load( new ByteArrayInputStream( m_propertyString.getBytes("ISO-8859-1") ) );
+        super.load( new ByteArrayInputStream( m_propertyString.getBytes(StandardCharsets.ISO_8859_1) ) );
     }
 
     /**
@@ -101,7 +102,7 @@ public class CommentedProperties extends Properties
     @Override
     public synchronized void store( OutputStream out, String comments ) throws IOException
     {
-        byte[] bytes = m_propertyString.getBytes("ISO-8859-1");
+        byte[] bytes = m_propertyString.getBytes(StandardCharsets.ISO_8859_1);
         FileUtil.copyContents( new ByteArrayInputStream( bytes ), out );
         out.flush();
     }

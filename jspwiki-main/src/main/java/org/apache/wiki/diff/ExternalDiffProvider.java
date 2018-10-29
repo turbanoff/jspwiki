@@ -23,6 +23,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
@@ -118,7 +119,7 @@ public class ExternalDiffProvider implements DiffProvider
             String output = FileUtil.runSimpleCommand(cmd, f1.getParent());
 
             // FIXME: Should this rely on the system default encoding?
-            String rawWikiDiff = new String(output.getBytes("ISO-8859-1"), m_encoding);
+            String rawWikiDiff = new String(output.getBytes(StandardCharsets.ISO_8859_1), m_encoding);
 
             String htmlWikiDiff = TextUtil.replaceEntities( rawWikiDiff );
 

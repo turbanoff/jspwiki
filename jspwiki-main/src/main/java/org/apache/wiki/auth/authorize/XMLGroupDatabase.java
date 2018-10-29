@@ -24,6 +24,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.security.Principal;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -407,7 +408,7 @@ public class XMLGroupDatabase implements GroupDatabase
         File newFile = new File( m_file.getAbsolutePath() + ".new" );
         try
         {
-            BufferedWriter io = new BufferedWriter( new OutputStreamWriter( new FileOutputStream( newFile ), "UTF-8" ) );
+            BufferedWriter io = new BufferedWriter( new OutputStreamWriter( new FileOutputStream( newFile ), StandardCharsets.UTF_8) );
 
             // Write the file header and document root
             io.write( "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" );

@@ -27,6 +27,7 @@ import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 
 import org.apache.log4j.Logger;
 import org.apache.wiki.WatchDog;
@@ -102,7 +103,7 @@ public class RSSThread extends WikiBackgroundThread
                 String feed = m_generator.generate();
 
                 in  = new StringReader(feed);
-                out = new BufferedWriter( new OutputStreamWriter( new FileOutputStream( m_rssFile ), "UTF-8") );
+                out = new BufferedWriter( new OutputStreamWriter( new FileOutputStream( m_rssFile ), StandardCharsets.UTF_8) );
 
                 FileUtil.copyContents( in, out );
             }

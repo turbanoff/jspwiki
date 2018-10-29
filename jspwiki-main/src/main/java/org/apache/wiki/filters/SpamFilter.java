@@ -24,6 +24,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -767,7 +768,7 @@ public class SpamFilter extends BasicPageFilter {
                 if( att != null ) {
                     InputStream in = context.getEngine().getAttachmentManager().getAttachmentStream(att);
                     StringWriter out = new StringWriter();
-                    FileUtil.copyContents( new InputStreamReader( in,"UTF-8" ), out );
+                    FileUtil.copyContents( new InputStreamReader( in, StandardCharsets.UTF_8), out );
                     Collection< Pattern > blackList = parseBlacklist( out.toString() );
                     log.info( "...recognizing additional " + blackList.size() + " patterns from blacklist " + m_blacklist );
                     m_spamPatterns.addAll( blackList );

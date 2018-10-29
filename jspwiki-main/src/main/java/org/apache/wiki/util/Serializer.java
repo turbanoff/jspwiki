@@ -25,6 +25,7 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -59,7 +60,7 @@ public final class Serializer
     public static Map<String,? extends Serializable> deserializeFromBase64( String rawString ) throws IOException
     {
         // Decode from Base64-encoded String to byte array
-        byte[] decodedBytes = Base64.decodeBase64( rawString.getBytes("UTF-8") );
+        byte[] decodedBytes = Base64.decodeBase64( rawString.getBytes(StandardCharsets.UTF_8) );
         
         // Deserialize from the input stream to the Map
         InputStream bytesIn = new ByteArrayInputStream( decodedBytes );

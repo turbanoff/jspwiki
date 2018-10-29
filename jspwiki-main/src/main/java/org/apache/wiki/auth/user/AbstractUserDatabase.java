@@ -19,6 +19,7 @@
 package org.apache.wiki.auth.user;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.Principal;
@@ -232,7 +233,7 @@ public abstract class AbstractUserDatabase implements UserDatabase
             if ( newPasswordFormat )
             {
                 hashedPassword = getHash( password );
-                return CryptoUtil.verifySaltedPassword( password.getBytes("UTF-8"), storedPassword );
+                return CryptoUtil.verifySaltedPassword( password.getBytes(StandardCharsets.UTF_8), storedPassword );
             }
 
             // If old format, verify using the old SHA verification algorithm
@@ -312,16 +313,12 @@ public abstract class AbstractUserDatabase implements UserDatabase
         String hash = null;
         try
         {
-            hash = CryptoUtil.getSaltedPassword( text.getBytes("UTF-8") );
+            hash = CryptoUtil.getSaltedPassword( text.getBytes(StandardCharsets.UTF_8) );
         }
         catch( NoSuchAlgorithmException e )
         {
             log.error( "Error creating salted SHA password hash:" + e.getMessage() );
             hash = text;
-        }
-        catch( UnsupportedEncodingException e )
-        {
-            log.fatal("You do not have UTF-8!?!");
         }
         return hash;
     }
@@ -339,7 +336,7 @@ public abstract class AbstractUserDatabase implements UserDatabase
         try
         {
             MessageDigest md = MessageDigest.getInstance( "SHA" );
-            md.update( text.getBytes("UTF-8") );
+            md.update( text.getBytes(StandardCharsets.UTF_8) );
             byte[] digestedBytes = md.digest();
             hash = ByteUtils.bytes2hex( digestedBytes );
         }
@@ -347,10 +344,6 @@ public abstract class AbstractUserDatabase implements UserDatabase
         {
             log.error( "Error creating SHA password hash:" + e.getMessage() );
             hash = text;
-        }
-        catch (UnsupportedEncodingException e)
-        {
-            log.fatal("UTF-8 not supported!?!");
         }
         return hash;
     }

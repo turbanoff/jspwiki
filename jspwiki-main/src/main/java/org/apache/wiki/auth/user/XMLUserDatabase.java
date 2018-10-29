@@ -25,6 +25,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
 import java.security.Principal;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -359,7 +360,7 @@ public class XMLUserDatabase extends AbstractUserDatabase {
         try
         {
             BufferedWriter io = new BufferedWriter( new OutputStreamWriter ( 
-                    new FileOutputStream( newFile ), "UTF-8" ) );
+                    new FileOutputStream( newFile ), StandardCharsets.UTF_8) );
             
             // Write the file header and document root
             io.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");

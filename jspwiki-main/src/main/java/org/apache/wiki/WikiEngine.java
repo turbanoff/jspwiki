@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -927,7 +928,7 @@ public class WikiEngine
             String res = request.getParameter( name );
             if( res != null )
             {
-                res = new String(res.getBytes("ISO-8859-1"),
+                res = new String(res.getBytes(StandardCharsets.ISO_8859_1),
                                  getContentEncoding() );
             }
 
@@ -962,7 +963,7 @@ public class WikiEngine
             String res = request.getQueryString();
             if( res != null )
             {
-                res = new String(res.getBytes("ISO-8859-1"),
+                res = new String(res.getBytes(StandardCharsets.ISO_8859_1),
                                  getContentEncoding() );
 
                 //

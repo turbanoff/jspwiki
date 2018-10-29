@@ -19,6 +19,7 @@
 package org.apache.wiki.util;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -98,7 +99,7 @@ public final class CryptoUtil
                 throw new IllegalArgumentException( "Error: --hash requires a 'password' argument." );
             }
             final String password = args[1].trim();
-            System.out.println( CryptoUtil.getSaltedPassword( password.getBytes("UTF-8") ) );
+            System.out.println( CryptoUtil.getSaltedPassword( password.getBytes(StandardCharsets.UTF_8) ) );
         }
 
         // User wants to verify an existing password
@@ -110,7 +111,7 @@ public final class CryptoUtil
             }
             final String password = args[1].trim();
             final String digest = args[2].trim();
-            System.out.println( CryptoUtil.verifySaltedPassword( password.getBytes("UTF-8"), digest ) );
+            System.out.println( CryptoUtil.verifySaltedPassword( password.getBytes(StandardCharsets.UTF_8), digest ) );
         }
 
         else
@@ -186,14 +187,7 @@ public final class CryptoUtil
         byte[] base64 = Base64.encodeBase64( all );
         
         String saltedString = null;
-        try
-        {
-            saltedString = SSHA + new String( base64, "UTF8" );
-        }
-        catch( UnsupportedEncodingException e )
-        {
-            log.fatal( "You do not have UTF-8!?!" );
-        }
+        saltedString = SSHA + new String( base64, StandardCharsets.UTF_8);
         return saltedString;
     }
 
@@ -214,7 +208,7 @@ public final class CryptoUtil
         {
             throw new IllegalArgumentException( "Hash not prefixed by {SSHA}; is it really a salted hash?" );
         }
-        byte[] challenge = Base64.decodeBase64( entry.substring( 6 ).getBytes("UTF-8") );
+        byte[] challenge = Base64.decodeBase64( entry.substring( 6 ).getBytes(StandardCharsets.UTF_8) );
 
         // Extract the password hash and salt
         byte[] passwordHash = extractPasswordHash( challenge );

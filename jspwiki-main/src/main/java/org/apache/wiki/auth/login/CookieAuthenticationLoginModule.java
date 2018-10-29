@@ -19,6 +19,7 @@
 package org.apache.wiki.auth.login;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
 import javax.security.auth.callback.Callback;
@@ -121,7 +122,7 @@ public class CookieAuthenticationLoginModule extends AbstractLoginModule
 
                     try
                     {
-                        in = new BufferedReader( new InputStreamReader( new FileInputStream( cookieFile ), "UTF-8" ) );
+                        in = new BufferedReader( new InputStreamReader( new FileInputStream( cookieFile ), StandardCharsets.UTF_8) );
                         String username = FileUtil.readContents( in );
 
                         if ( log.isDebugEnabled() )
@@ -257,7 +258,7 @@ public class CookieAuthenticationLoginModule extends AbstractLoginModule
             //
             //  Write the cookie content to the cookie store file.
             //
-            out = new BufferedWriter( new OutputStreamWriter( new FileOutputStream(cf), "UTF-8" ) );
+            out = new BufferedWriter( new OutputStreamWriter( new FileOutputStream(cf), StandardCharsets.UTF_8) );
             FileUtil.copyContents( new StringReader(username), out );
 
             if( log.isDebugEnabled() )
