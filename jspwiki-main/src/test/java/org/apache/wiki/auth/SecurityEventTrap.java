@@ -32,7 +32,7 @@ import org.apache.wiki.event.WikiSecurityEvent;
 public class SecurityEventTrap implements WikiEventListener
 {
     private WikiSecurityEvent m_lastEvent = null;
-    private List<WikiSecurityEvent> m_events    = new ArrayList<WikiSecurityEvent>();
+    private List<WikiSecurityEvent> m_events    = new ArrayList<>();
 
     public void actionPerformed( WikiEvent event )
     {

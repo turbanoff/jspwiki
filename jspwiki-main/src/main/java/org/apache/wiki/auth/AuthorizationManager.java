@@ -117,7 +117,7 @@ public class AuthorizationManager {
     private Authorizer                        m_authorizer      = null;
 
     /** Cache for storing ProtectionDomains used to evaluate the local policy. */
-    private Map<Principal, ProtectionDomain>                               m_cachedPds       = new WeakHashMap<Principal, ProtectionDomain>();
+    private Map<Principal, ProtectionDomain>                               m_cachedPds       = new WeakHashMap<>();
 
     private WikiEngine                        m_engine          = null;
 

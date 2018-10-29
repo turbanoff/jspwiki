@@ -79,7 +79,7 @@ public abstract class AbstractRPCHandler
     {
         checkPermission( PagePermission.VIEW );
         Collection< WikiPage > pages = m_engine.getRecentChanges();
-        Vector< Hashtable< ?, ? > > result = new Vector<Hashtable< ?, ? > >();
+        Vector< Hashtable< ?, ? > > result = new Vector<>();
 
         // Transform UTC into local time.
         Calendar cal = Calendar.getInstance();

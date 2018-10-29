@@ -192,7 +192,7 @@ public class ContextualDiffProvider implements DiffProvider {
     {
         String[] linesArray = Diff.stringToArray( wikiText );
 
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
 
         for( int i = 0; i < linesArray.length; i++ )
         {

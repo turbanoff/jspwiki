@@ -159,7 +159,7 @@ public abstract class AbstractUserDatabase implements UserDatabase
         try
         {
             UserProfile profile = findByLoginName( identifier );
-            ArrayList<Principal> principals = new ArrayList<Principal>();
+            ArrayList<Principal> principals = new ArrayList<>();
             if ( profile.getLoginName() != null && profile.getLoginName().length() > 0 )
             {
                 principals.add( new WikiPrincipal( profile.getLoginName(), WikiPrincipal.LOGIN_NAME ) );

@@ -755,7 +755,7 @@ public final class SecurityVerifier
 
             // Stash the unique principals mentioned in the file,
             // plus our standard roles.
-            Set<Principal> principals = new LinkedHashSet<Principal>();
+            Set<Principal> principals = new LinkedHashSet<>();
             principals.add( Role.ALL );
             principals.add( Role.ANONYMOUS );
             principals.add( Role.ASSERTED );

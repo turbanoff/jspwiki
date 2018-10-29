@@ -139,7 +139,7 @@ public class WeblogArchivePlugin implements WikiPlugin
         throws ProviderException
     {
         Comparator< Calendar > comp = new ArchiveComparator();
-        TreeSet<Calendar> res = new TreeSet<Calendar>( comp );
+        TreeSet<Calendar> res = new TreeSet<>(comp);
 
         WeblogPlugin pl = new WeblogPlugin();
 

@@ -532,7 +532,7 @@ public class AttachmentManager
 
         m_provider.putAttachmentData( att, in );
 
-        m_engine.getReferenceManager().updateReferences( att.getName(), new Vector< String >() );
+        m_engine.getReferenceManager().updateReferences( att.getName(), new Vector<>() );
 
         WikiPage parent = new WikiPage( m_engine, att.getParentName() );
         m_engine.updateReferences( parent );

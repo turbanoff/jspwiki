@@ -416,7 +416,7 @@ public class JDBCUserDatabase extends AbstractUserDatabase
      */
     public Principal[] getWikiNames() throws WikiSecurityException
     {
-        Set<Principal> principals = new HashSet<Principal>();
+        Set<Principal> principals = new HashSet<>();
         Connection conn = null;
         try
         {

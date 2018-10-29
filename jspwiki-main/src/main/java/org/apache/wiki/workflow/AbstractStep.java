@@ -74,10 +74,10 @@ public abstract class AbstractStep implements Step
         m_start = Workflow.TIME_NOT_SET;
         m_completed = false;
         m_end = Workflow.TIME_NOT_SET;
-        m_errors = new ArrayList<String>();
+        m_errors = new ArrayList<>();
         m_outcome = Outcome.STEP_CONTINUE;
         m_key = messageKey;
-        m_successors = new LinkedHashMap<Outcome, Step>();
+        m_successors = new LinkedHashMap<>();
     }
 
     /**

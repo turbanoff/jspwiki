@@ -81,7 +81,7 @@ public class GroupManager implements Authorizer, WikiEventListener {
     private GroupDatabase       m_groupDatabase    = null;
 
     /** Map with GroupPrincipals as keys, and Groups as values */
-    private final Map<Principal, Group>           m_groups           = new HashMap<Principal, Group>();
+    private final Map<Principal, Group>           m_groups           = new HashMap<>();
 
     /**
      * <p>
@@ -607,7 +607,7 @@ public class GroupManager implements Authorizer, WikiEventListener {
      */
     protected String[] extractMembers( String memberLine )
     {
-        Set<String> members = new HashSet<String>();
+        Set<String> members = new HashSet<>();
         if ( memberLine != null )
         {
             StringTokenizer tok = new StringTokenizer( memberLine, "\n" );

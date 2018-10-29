@@ -25,7 +25,7 @@ import org.junit.jupiter.api.Test;
 
 public class TimedCounterListTest
 {
-    TimedCounterList<String> m_list = new TimedCounterList<String>();
+    TimedCounterList<String> m_list = new TimedCounterList<>();
 
     @BeforeEach
     public void setUp()

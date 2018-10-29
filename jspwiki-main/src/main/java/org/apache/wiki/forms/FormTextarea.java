@@ -61,7 +61,7 @@ public class FormTextarea extends FormElement
         }
 
         if ( previousValues == null ) {
-            previousValues = new HashMap< String, String >();
+            previousValues = new HashMap<>();
         }
 
         Element field = buildTextArea( params, previousValues, rb );

@@ -81,7 +81,7 @@ public class AtomFeed extends Feed
 
     private Collection getItems()
     {
-        ArrayList<Element> list = new ArrayList<Element>();
+        ArrayList<Element> list = new ArrayList<>();
 
         WikiEngine engine = m_wikiContext.getEngine();
         ServletContext servletContext = null;

@@ -63,7 +63,7 @@ public class Group
     static final String[]  RESTRICTED_GROUPNAMES = new String[]
                                                   { "Anonymous", "All", "Asserted", "Authenticated" };
 
-    private final Vector<Principal>    m_members             = new Vector<Principal>();
+    private final Vector<Principal>    m_members             = new Vector<>();
 
     private String          m_creator             = null;
 

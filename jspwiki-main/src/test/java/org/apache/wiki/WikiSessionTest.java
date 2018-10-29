@@ -272,7 +272,7 @@ public class WikiSessionTest
 
         // Build anon session
         MockHttpServletRequest request = engine.newHttpRequest();
-        Set<String> r = new HashSet<String>();
+        Set<String> r = new HashSet<>();
         for ( int i = 0; i < roles.length; i++ )
         {
             r.add( roles[i].getName() );
@@ -320,7 +320,7 @@ public class WikiSessionTest
     {
         // Build container session
         MockHttpServletRequest request = engine.newHttpRequest();
-        Set<String> r = new HashSet<String>();
+        Set<String> r = new HashSet<>();
         for ( int i = 0; i < roles.length; i++ )
         {
             r.add( roles[i].getName() );

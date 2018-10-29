@@ -44,8 +44,8 @@ public class JSPWikiLinkRenderer implements NodeRenderer {
      */
     @Override
     public Set< NodeRenderingHandler< ? > > getNodeRenderingHandlers() {
-        HashSet< NodeRenderingHandler< ? > > set = new HashSet< NodeRenderingHandler< ? > >();
-        set.add( new NodeRenderingHandler< JSPWikiLink >( JSPWikiLink.class, new CustomNodeRenderer< JSPWikiLink >() {
+        HashSet< NodeRenderingHandler< ? > > set = new HashSet<>();
+        set.add(new NodeRenderingHandler<>(JSPWikiLink.class, new CustomNodeRenderer<JSPWikiLink>() {
 
             /**
              * {@inheritDoc}

@@ -655,7 +655,7 @@ public class VersioningFileProvider
     public List getVersionHistory( String page )
     throws ProviderException
     {
-        ArrayList<WikiPage> list = new ArrayList<WikiPage>();
+        ArrayList<WikiPage> list = new ArrayList<>();
 
         int latest = findLatestVersion( page );
 
@@ -868,7 +868,7 @@ public class VersioningFileProvider
     public Collection getAllPages() throws ProviderException
     {
         Collection pages = super.getAllPages();
-        Collection<WikiPage> returnedPages = new ArrayList<WikiPage>();
+        Collection<WikiPage> returnedPages = new ArrayList<>();
 
         for( Iterator i = pages.iterator(); i.hasNext(); )
         {

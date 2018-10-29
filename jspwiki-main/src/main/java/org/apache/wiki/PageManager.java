@@ -150,7 +150,7 @@ public class PageManager extends ModuleManager implements WikiEventListener {
 
     private WikiPageProvider m_provider;
 
-    protected ConcurrentHashMap<String, PageLock> m_pageLocks = new ConcurrentHashMap<String, PageLock>();
+    protected ConcurrentHashMap<String, PageLock> m_pageLocks = new ConcurrentHashMap<>();
 
     private WikiEngine m_engine;
 
@@ -380,7 +380,7 @@ public class PageManager extends ModuleManager implements WikiEventListener {
      * @since 2.0.22.
      */
     public List<PageLock> getActiveLocks() {
-        ArrayList<PageLock> result = new ArrayList<PageLock>();
+        ArrayList<PageLock> result = new ArrayList<>();
 
         for (PageLock lock : m_pageLocks.values()) {
             result.add(lock);
@@ -770,8 +770,8 @@ public class PageManager extends ModuleManager implements WikiEventListener {
         boolean pageChanged = false;
         if (acl != null) {
             Enumeration<AclEntry> entries = acl.entries();
-            Collection<AclEntry> entriesToAdd = new ArrayList<AclEntry>();
-            Collection<AclEntry> entriesToRemove = new ArrayList<AclEntry>();
+            Collection<AclEntry> entriesToAdd = new ArrayList<>();
+            Collection<AclEntry> entriesToRemove = new ArrayList<>();
             while (entries.hasMoreElements()) {
                 AclEntry entry = entries.nextElement();
                 if (ArrayUtils.contains(oldPrincipals, entry.getPrincipal())) {

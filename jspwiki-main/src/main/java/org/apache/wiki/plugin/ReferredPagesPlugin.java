@@ -50,7 +50,7 @@ public class ReferredPagesPlugin implements WikiPlugin
     private static Logger log = Logger.getLogger( ReferredPagesPlugin.class );
     private WikiEngine     m_engine;
     private int            m_depth;
-    private HashSet<String> m_exists  = new HashSet<String>();
+    private HashSet<String> m_exists  = new HashSet<>();
     private StringBuffer   m_result  = new StringBuffer(1024);
     private PatternMatcher m_matcher = new Perl5Matcher();
     private Pattern        m_includePattern;
@@ -190,11 +190,11 @@ public class ReferredPagesPlugin implements WikiPlugin
     private void handleLinks(WikiContext context,Collection<String> links, int depth, String pagename)
     {
         boolean isUL = false;
-        HashSet<String> localLinkSet = new HashSet<String>();  // needed to skip multiple
+        HashSet<String> localLinkSet = new HashSet<>();  // needed to skip multiple
         // links to the same page
         localLinkSet.add(pagename);
 
-        ArrayList<String> allLinks = new ArrayList<String>();
+        ArrayList<String> allLinks = new ArrayList<>();
 
         if( links != null )
             allLinks.addAll( links );

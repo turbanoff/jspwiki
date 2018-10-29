@@ -455,7 +455,7 @@ public class BasicAttachmentProvider
     public List< Attachment > listAttachments( WikiPage page )
         throws ProviderException
     {
-        List<Attachment> result = new ArrayList<Attachment>();
+        List<Attachment> result = new ArrayList<>();
 
         File dir = findPageDir( page.getName() );
 
@@ -547,7 +547,7 @@ public class BasicAttachmentProvider
             throw new ProviderException("Specified attachment directory "+m_storageDir+" does not exist!");
         }
 
-        ArrayList<Attachment> list = new ArrayList<Attachment>();
+        ArrayList<Attachment> list = new ArrayList<>();
 
         String[] pagesWithAttachments = attDir.list( new AttachmentFilter() );
 
@@ -645,7 +645,7 @@ public class BasicAttachmentProvider
      */
     public List getVersionHistory( Attachment att )
     {
-        ArrayList<Attachment> list = new ArrayList<Attachment>();
+        ArrayList<Attachment> list = new ArrayList<>();
 
         try
         {

@@ -132,14 +132,14 @@ public class AuthenticationManager {
     protected static final String                 PROP_LOGIN_MODULE = "jspwiki.loginModule.class";
     
     /** Empty Map passed to JAAS {@link #doJAASLogin(Class, CallbackHandler, Map)} method. */
-    protected static final Map<String,String> EMPTY_MAP = Collections.unmodifiableMap( new HashMap<String,String>() );
+    protected static final Map<String,String> EMPTY_MAP = Collections.unmodifiableMap(new HashMap<>() );
     
     /** Class (of type LoginModule) to use for custom authentication. */
     protected Class<? extends LoginModule> m_loginModuleClass = UserDatabaseLoginModule.class;
     
     /** Options passed to {@link javax.security.auth.spi.LoginModule#initialize(Subject, CallbackHandler, Map, Map)}; 
      * initialized by {@link #initialize(WikiEngine, Properties)}. */
-    protected Map<String,String> m_loginModuleOptions = new HashMap<String,String>();
+    protected Map<String,String> m_loginModuleOptions = new HashMap<>();
 
     /** Just to provide compatibility with the old versions.  The same
      *  as SECURITY_OFF.
@@ -153,7 +153,7 @@ public class AuthenticationManager {
     private static final String                 DEFAULT_LOGIN_MODULE = "org.apache.wiki.auth.login.UserDatabaseLoginModule";
     
     /** Empty principal set. */
-    private static final Set<Principal> NO_PRINCIPALS = new HashSet<Principal>();
+    private static final Set<Principal> NO_PRINCIPALS = new HashSet<>();
 
     /** Static Boolean for lazily-initializing the "allows assertions" flag */
     private boolean                     m_allowsCookieAssertions  = true;
@@ -169,7 +169,7 @@ public class AuthenticationManager {
     private boolean                            m_storeIPAddress    = true;
 
     /** Keeps a list of the usernames who have attempted a login recently. */
-    private TimedCounterList<String> m_lastLoginAttempts = new TimedCounterList<String>();
+    private TimedCounterList<String> m_lastLoginAttempts = new TimedCounterList<>();
     
     /**
      * Creates an AuthenticationManager instance for the given WikiEngine and

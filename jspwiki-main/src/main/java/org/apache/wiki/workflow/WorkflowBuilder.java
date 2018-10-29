@@ -30,7 +30,7 @@ import org.apache.wiki.api.exceptions.WikiException;
  */
 public final class WorkflowBuilder
 {
-    private static final Map<WikiEngine, WorkflowBuilder> BUILDERS = new HashMap<WikiEngine, WorkflowBuilder>();
+    private static final Map<WikiEngine, WorkflowBuilder> BUILDERS = new HashMap<>();
     private final WikiEngine m_engine;
 
     /**

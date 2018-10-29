@@ -82,7 +82,7 @@ public class FormInput extends FormElement
 
         if ( previousValues == null )
         {
-            previousValues = new HashMap< String, String >();
+            previousValues = new HashMap<>();
         }
 
         // In order to isolate posted form elements into their own

@@ -76,7 +76,7 @@ public class CreoleRenderer extends WikiRenderer
     private int m_listCount = 0;
     private char m_listChar = 'x';
 
-    private List<PluginContent> m_plugins = new ArrayList<PluginContent>();
+    private List<PluginContent> m_plugins = new ArrayList<>();
 
     /**
      *  Creates a new Creole Renderer.

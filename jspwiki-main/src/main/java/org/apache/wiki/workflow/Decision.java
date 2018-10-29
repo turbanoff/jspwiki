@@ -82,7 +82,7 @@ public abstract class Decision extends AbstractStep
         super( workflow, messageKey );
         m_actor = actor;
         m_defaultOutcome = defaultOutcome;
-        m_facts = new ArrayList<Fact>();
+        m_facts = new ArrayList<>();
         addSuccessor( defaultOutcome, null );
     }
 

@@ -163,7 +163,7 @@ public class TestContainer
 
     private static Map<String, String> extractApps( String[] args )
     {
-        Map<String, String> apps = new HashMap<String, String>();
+        Map<String, String> apps = new HashMap<>();
         for( int i = 0; i < args.length; i++ )
         {
             String[] pair = args[i].split( "=" );
@@ -227,7 +227,7 @@ public class TestContainer
         }
         catch ( NameNotFoundException e )
         {
-            initCtx.bind( JNDI_ENV_ROOT, new NamingContext(new Hashtable<String, Object>(), JNDI_ENV_ROOT, null, new InitialContextFactory.DefaultParser()) );
+            initCtx.bind( JNDI_ENV_ROOT, new NamingContext(new Hashtable<>(), JNDI_ENV_ROOT, null, new InitialContextFactory.DefaultParser()) );
             log.error( "No JNDI " + JNDI_ENV_ROOT + " namespace found; creating it," );
         }
         log.info( "Initialized JNDI " + JNDI_ENV_ROOT + " namespace.=" + contextFactoryClass );

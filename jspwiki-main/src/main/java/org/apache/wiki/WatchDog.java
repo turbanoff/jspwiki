@@ -50,13 +50,13 @@ import org.apache.log4j.Logger;
 public final class WatchDog {
 
     private Watchable m_watchable;
-    private Stack< State > m_stateStack = new Stack< State >();
+    private Stack< State > m_stateStack = new Stack<>();
     private boolean m_enabled = true;
     private WikiEngine m_engine;
 
     private static final Logger log = Logger.getLogger( WatchDog.class );
 
-    private static Map< Integer, WeakReference< WatchDog > > c_kennel = new ConcurrentHashMap< Integer, WeakReference< WatchDog > >();
+    private static Map< Integer, WeakReference< WatchDog > > c_kennel = new ConcurrentHashMap<>();
 
     private static WikiBackgroundThread c_watcherThread;
 
@@ -81,7 +81,7 @@ public final class WatchDog {
 
         if( w == null || wd == null ) {
             wd = new WatchDog( engine, t );
-            w = new WeakReference< WatchDog >( wd );
+            w = new WeakReference<>(wd);
 
             c_kennel.put( t.hashCode(), w );
         }

@@ -133,13 +133,13 @@ public class SearchManager extends BasicPageFilter implements InternalModule, Wi
     			}
 
     			if (actionName.equals(AJAX_ACTION_SUGGESTIONS)) {
-    				List<String> callResults = new ArrayList<String>();
+    				List<String> callResults = new ArrayList<>();
     				log.debug("Calling getSuggestions() START");
     				callResults = getSuggestions(itemId, maxResults);
     				log.debug("Calling getSuggestions() DONE. "+callResults.size());
     				result = AjaxUtil.toJson(callResults);
     			} else if (actionName.equals(AJAX_ACTION_PAGES)) {
-    				List<Map<String,Object>> callResults = new ArrayList<Map<String,Object>>();
+    				List<Map<String,Object>> callResults = new ArrayList<>();
     				log.debug("Calling findPages() START");
     				WikiContext wikiContext = m_engine.createContext(req, WikiContext.VIEW);
     				if (wikiContext == null) {
@@ -167,7 +167,7 @@ public class SearchManager extends BasicPageFilter implements InternalModule, Wi
         {
             StopWatch sw = new StopWatch();
             sw.start();
-            List<String> list = new ArrayList<String>(maxLength);
+            List<String> list = new ArrayList<>(maxLength);
 
             if( wikiName.length() > 0 )
             {
@@ -217,7 +217,7 @@ public class SearchManager extends BasicPageFilter implements InternalModule, Wi
             StopWatch sw = new StopWatch();
             sw.start();
 
-            List<Map<String,Object>> list = new ArrayList<Map<String,Object>>(maxLength);
+            List<Map<String,Object>> list = new ArrayList<>(maxLength);
 
             if( searchString.length() > 0 )
             {

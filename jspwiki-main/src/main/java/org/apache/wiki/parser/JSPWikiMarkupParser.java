@@ -98,7 +98,7 @@ public class JSPWikiMarkupParser extends MarkupParser {
     private boolean        m_isPreBlock   = false;
 
     /** Contains style information, in multiple forms. */
-    private Stack<Boolean> m_styleStack   = new Stack<Boolean>();
+    private Stack<Boolean> m_styleStack   = new Stack<>();
 
      // general list handling
     private int            m_genlistlevel = 0;
@@ -116,7 +116,7 @@ public class JSPWikiMarkupParser extends MarkupParser {
     private Element        m_currentElement;
 
     /** Keep track of duplicate header names.  */
-    private Map<String, Integer>   m_titleSectionCounter = new HashMap<String, Integer>();
+    private Map<String, Integer>   m_titleSectionCounter = new HashMap<>();
 
     /** If true, consider CamelCase hyperlinks as well. */
     public static final String     PROP_CAMELCASELINKS   = "jspwiki.translatorReader.camelCaseLinks";
@@ -2669,7 +2669,7 @@ public class JSPWikiMarkupParser extends MarkupParser {
 
         if( rootElement.getChild("p") != null )
         {
-            ArrayList<Content> ls = new ArrayList<Content>();
+            ArrayList<Content> ls = new ArrayList<>();
             int idxOfFirstContent = 0;
             int count = 0;
 

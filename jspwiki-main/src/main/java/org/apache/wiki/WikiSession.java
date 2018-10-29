@@ -104,11 +104,11 @@ public final class WikiSession implements WikiEventListener
 
     private static final String ALL                   = "*";
 
-    private static ThreadLocal<WikiSession> c_guestSession = new ThreadLocal<WikiSession>();
+    private static ThreadLocal<WikiSession> c_guestSession = new ThreadLocal<>();
 
     private final Subject       m_subject             = new Subject();
 
-    private final Map<String,Set<String>> m_messages  = new HashMap<String,Set<String>>();
+    private final Map<String,Set<String>> m_messages  = new HashMap<>();
 
     /** The WikiEngine that created this session. */
     private WikiEngine          m_engine              = null;
@@ -290,7 +290,7 @@ public final class WikiSession implements WikiEventListener
         Set<String> messages = m_messages.get( topic );
         if (messages == null )
         {
-            messages = new LinkedHashSet<String>();
+            messages = new LinkedHashSet<>();
             m_messages.put( topic, messages );
         }
         messages.add( StringUtils.defaultString( message ) );
@@ -354,7 +354,7 @@ public final class WikiSession implements WikiEventListener
      */
     public Principal[] getPrincipals()
     {
-        ArrayList<Principal> principals = new ArrayList<Principal>();
+        ArrayList<Principal> principals = new ArrayList<>();
 
         // Take the first non Role as the main Principal
         for( Principal principal : m_subject.getPrincipals() )
@@ -383,7 +383,7 @@ public final class WikiSession implements WikiEventListener
      */
     public Principal[] getRoles()
     {
-        Set<Principal> roles = new HashSet<Principal>();
+        Set<Principal> roles = new HashSet<>();
 
         // Add all of the Roles possessed by the Subject directly
         roles.addAll( m_subject.getPrincipals( Role.class ) );

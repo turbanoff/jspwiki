@@ -32,7 +32,7 @@ import org.apache.wiki.api.exceptions.NoSuchVariableException;
  * Represents an abstract feed.
  */
 public abstract class Feed {
-    protected List<Entry> m_entries = new ArrayList<Entry>();
+    protected List<Entry> m_entries = new ArrayList<>();
 
     protected String m_feedURL;
     protected String m_channelTitle;

@@ -91,7 +91,7 @@ public final class Serializer
     public static String serializeToBase64( Map<String,Serializable> map ) throws IOException
     {
         // Load the Map contents into a defensive HashMap
-        HashMap<String,Serializable> serialMap = new HashMap<String,Serializable>();
+        HashMap<String,Serializable> serialMap = new HashMap<>();
         serialMap.putAll( map );
         
         // Serialize the Map to an output stream

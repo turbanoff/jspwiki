@@ -147,7 +147,7 @@ public class MetaWeblogHandler
      */
     private Hashtable<String,Object> makeEntry( WikiPage page )
     {
-        Hashtable<String, Object> ht = new Hashtable<String, Object>();
+        Hashtable<String, Object> ht = new Hashtable<>();
 
         WikiPage firstVersion = m_context.getEngine().getPage( page.getName(), 1 );
 
@@ -198,7 +198,7 @@ public class MetaWeblogHandler
                                      int numberOfPosts)
         throws XmlRpcException
     {
-        Hashtable<String, Hashtable<String, Object>> result = new Hashtable<String, Hashtable<String, Object>>();
+        Hashtable<String, Hashtable<String, Object>> result = new Hashtable<>();
 
         log.info( "metaWeblog.getRecentPosts() called");
 
@@ -335,7 +335,7 @@ public class MetaWeblogHandler
             throw new XmlRpcException( 0, "Failed to upload media object: "+e.getMessage() );
         }
 
-        Hashtable<String, Object> result = new Hashtable<String, Object>();
+        Hashtable<String, Object> result = new Hashtable<>();
         result.put("url", url);
 
         return result;

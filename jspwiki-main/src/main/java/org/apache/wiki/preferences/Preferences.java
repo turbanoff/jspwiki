@@ -149,7 +149,7 @@ public class Preferences
         if( prefVal != null )
         {
             Gson gson=new Gson();
-            Map<String,String> map = new HashMap<String,String>();
+            Map<String,String> map = new HashMap<>();
             // Convert prefVal JSON to a generic hashmap
             map = (Map<String,String>) gson.fromJson(prefVal, map.getClass());
 

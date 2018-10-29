@@ -243,7 +243,7 @@ public class XMLUserDatabase extends AbstractUserDatabase {
         {
             throw new IllegalStateException( "FATAL: database does not exist" );
         }
-        SortedSet<Principal> principals = new TreeSet<Principal>();
+        SortedSet<Principal> principals = new TreeSet<>();
         NodeList users = c_dom.getElementsByTagName( USER_TAG );
         for( int i = 0; i < users.getLength(); i++ )
         {

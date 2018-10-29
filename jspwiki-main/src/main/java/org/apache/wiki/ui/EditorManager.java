@@ -106,7 +106,7 @@ public class EditorManager extends ModuleManager {
      */
     private void registerEditors() {
         log.info( "Registering editor modules" );
-        m_editors = new HashMap<String, WikiEditorInfo>();
+        m_editors = new HashMap<>();
 
         //
         // Register all editors which have created a resource containing its properties.

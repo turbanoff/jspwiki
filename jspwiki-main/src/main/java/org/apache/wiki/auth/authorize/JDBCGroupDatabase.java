@@ -308,7 +308,7 @@ public class JDBCGroupDatabase implements GroupDatabase {
      */
     public Group[] groups() throws WikiSecurityException
     {
-        Set<Group> groups = new HashSet<Group>();
+        Set<Group> groups = new HashSet<>();
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;

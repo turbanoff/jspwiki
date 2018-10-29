@@ -224,7 +224,7 @@ public class PageViewPlugin extends AbstractReferralPlugin implements WikiPlugin
             {
                 // Load the counters into a collection
                 m_storage = new Properties();
-                m_counters = new TreeMap<String, Counter>();
+                m_counters = new TreeMap<>();
 
                 loadCounters();
             }
@@ -378,7 +378,7 @@ public class PageViewPlugin extends AbstractReferralPlugin implements WikiPlugin
                             {
                                 if( referrers == null )
                                 {
-                                    referrers = new HashSet<String>();
+                                    referrers = new HashSet<>();
                                 }
                                 referrers.addAll( refs );
                             }
@@ -459,7 +459,7 @@ public class PageViewPlugin extends AbstractReferralPlugin implements WikiPlugin
 
                         if( sort != null && PARAM_COUNT.equals( sort ) )
                         {
-                            sorted = new TreeMap<String, Counter>( m_compareCountDescending );
+                            sorted = new TreeMap<>(m_compareCountDescending);
 
                             sorted.putAll( m_counters );
                         }

@@ -170,7 +170,7 @@ public class DefaultAdminBeanManager implements WikiEventListener, AdminBeanMana
 
     // FIXME: Should unload the beans first.
     private void reload() {
-        m_allBeans = new ArrayList<AdminBean>();
+        m_allBeans = new ArrayList<>();
 
         try {
             registerAdminBean( new CoreBean( m_engine ) );

@@ -51,7 +51,7 @@ import net.sf.ehcache.CacheManager;
 public class JSPWikiMarkupParserTest
 {
     Properties props = TestEngine.getTestProperties();
-    Vector<String>     created = new Vector<String>();
+    Vector<String>     created = new Vector<>();
 
     static final String PAGE_NAME = "testpage";
 

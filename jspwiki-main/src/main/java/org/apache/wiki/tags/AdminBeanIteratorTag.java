@@ -55,7 +55,7 @@ public class AdminBeanIteratorTag extends IteratorTag {
     public void resetIterator() {
         AdminBeanManager mgr = m_wikiContext.getEngine().getAdminBeanManager();
         Collection< AdminBean > beans = mgr.getAllBeans();
-        ArrayList< AdminBean > typedBeans = new ArrayList< AdminBean >();
+        ArrayList< AdminBean > typedBeans = new ArrayList<>();
         for( Iterator< AdminBean > i = beans.iterator(); i.hasNext(); ) {
             AdminBean ab = i.next();
             if( ab.getType() == m_type ) {

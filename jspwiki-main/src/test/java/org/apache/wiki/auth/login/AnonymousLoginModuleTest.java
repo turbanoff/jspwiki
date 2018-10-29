@@ -55,7 +55,7 @@ public class AnonymousLoginModuleTest
             // Test using IP address (AnonymousLoginModule succeeds)
             CallbackHandler handler = new WebContainerCallbackHandler( m_engine, request );
             LoginModule module = new AnonymousLoginModule();
-            module.initialize( m_subject, handler, new HashMap<String, Object>(), new HashMap<String, Object>() );
+            module.initialize( m_subject, handler, new HashMap<>(), new HashMap<>() );
             module.login();
             module.commit();
             Set< Principal > principals = m_subject.getPrincipals();
@@ -79,8 +79,8 @@ public class AnonymousLoginModuleTest
             CallbackHandler handler = new WebContainerCallbackHandler( m_engine, request );
             LoginModule module = new AnonymousLoginModule();
             module.initialize( m_subject, handler,
-                              new HashMap<String, Object>(),
-                              new HashMap<String, Object>() );
+                    new HashMap<>(),
+                    new HashMap<>() );
             module.login();
             module.commit();
             Set< Principal > principals = m_subject.getPrincipals();

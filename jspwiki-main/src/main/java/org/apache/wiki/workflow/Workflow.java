@@ -268,11 +268,11 @@ public class Workflow implements Serializable
         super();
         m_attributes = null;
         m_currentStep = null;
-        m_history = new LinkedList<Step>();
+        m_history = new LinkedList<>();
         m_id = ID_NOT_SET;
         m_key = messageKey;
         m_manager = null;
-        m_messageArgs = new ArrayList<Serializable>();
+        m_messageArgs = new ArrayList<>();
         m_owner = owner;
         m_started = false;
         m_state = CREATED;
@@ -442,7 +442,7 @@ public class Workflow implements Serializable
      */
     public final Serializable[] getMessageArguments()
     {
-        List<Serializable> args = new ArrayList<Serializable>();
+        List<Serializable> args = new ArrayList<>();
         args.add( m_owner.getName() );
         Principal actor = getCurrentActor();
         args.add( actor == null ? "-" : actor.getName() );
@@ -603,7 +603,7 @@ public class Workflow implements Serializable
     {
         if ( m_attributes == null )
         {
-            m_attributes = new HashMap<String, Object>();
+            m_attributes = new HashMap<>();
         }
         m_attributes.put( attr, obj );
     }

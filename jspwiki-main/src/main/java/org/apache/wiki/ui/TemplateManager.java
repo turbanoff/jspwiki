@@ -406,7 +406,7 @@ public class TemplateManager extends ModuleManager {
         ServletContext sContext = pageContext.getServletContext();
 
         Set<String> skinSet = sContext.getResourcePaths( place );
-        TreeSet<String> resultSet = new TreeSet<String>();
+        TreeSet<String> resultSet = new TreeSet<>();
 
         if( log.isDebugEnabled() ) log.debug( "Listings skins from "+place );
 
@@ -444,7 +444,7 @@ public class TemplateManager extends ModuleManager {
      */
     public Map listLanguages(PageContext pageContext)
     {
-        Map< String, String > resultMap = new LinkedHashMap< String, String >();
+        Map< String, String > resultMap = new LinkedHashMap<>();
         String clientLanguage = ((HttpServletRequest) pageContext.getRequest()).getLocale().toString();
 
         List< String > entries = ClassUtil.classpathEntriesUnder( DIRECTORY );
@@ -482,8 +482,8 @@ public class TemplateManager extends ModuleManager {
     {
         WikiContext context = WikiContext.findContext( pageContext );
         Properties props = m_engine.getWikiProperties();
-        ArrayList<String> tfArr = new ArrayList<String>(40);
-        LinkedHashMap<String,String> resultMap = new LinkedHashMap<String,String>();
+        ArrayList<String> tfArr = new ArrayList<>(40);
+        LinkedHashMap<String,String> resultMap = new LinkedHashMap<>();
 
         /* filter timeformat properties */
         for (Enumeration e = props.propertyNames(); e.hasMoreElements();)
@@ -564,7 +564,7 @@ public class TemplateManager extends ModuleManager {
      */
     public Map listTimeZones(PageContext pageContext)
     {
-        LinkedHashMap<String,String> resultMap = new LinkedHashMap<String,String>();
+        LinkedHashMap<String,String> resultMap = new LinkedHashMap<>();
 
         String[][] tzs = { { "GMT-12", "Enitwetok, Kwajalien" },
                           { "GMT-11", "Nome, Midway Island, Samoa" },
@@ -738,14 +738,14 @@ public class TemplateManager extends ModuleManager {
 
         if( resourcemap == null )
         {
-            resourcemap = new HashMap<String,Vector<String>>();
+            resourcemap = new HashMap<>();
         }
 
         Vector<String> resources = resourcemap.get( type );
 
         if( resources == null )
         {
-            resources = new Vector<String>();
+            resources = new Vector<>();
         }
 
         String resourceString = null;

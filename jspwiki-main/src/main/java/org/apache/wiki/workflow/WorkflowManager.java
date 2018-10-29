@@ -65,9 +65,9 @@ public class WorkflowManager implements WikiEventListener {
     public WorkflowManager()
     {
         m_next = 1;
-        m_workflows = new HashSet<Workflow>();
-        m_approvers = new HashMap<String, Principal>();
-        m_completed = new ArrayList<Workflow>();
+        m_workflows = new HashSet<>();
+        m_approvers = new HashMap<>();
+        m_completed = new ArrayList<>();
     }
 
     /**
@@ -93,7 +93,7 @@ public class WorkflowManager implements WikiEventListener {
      */
     public Collection getWorkflows()
     {
-        return new HashSet<Workflow>( m_workflows );
+        return new HashSet<>(m_workflows);
     }
 
     /**
@@ -102,7 +102,7 @@ public class WorkflowManager implements WikiEventListener {
      */
     public List getCompletedWorkflows()
     {
-        return new ArrayList<Workflow>( m_completed );
+        return new ArrayList<>(m_completed);
     }
 
     private WikiEngine m_engine = null;
@@ -249,7 +249,7 @@ public class WorkflowManager implements WikiEventListener {
      */
     public Collection getOwnerWorkflows( WikiSession session )
     {
-        List<Workflow> workflows = new ArrayList<Workflow>();
+        List<Workflow> workflows = new ArrayList<>();
         if ( session.isAuthenticated() )
         {
             Principal[] sessionPrincipals = session.getPrincipals();

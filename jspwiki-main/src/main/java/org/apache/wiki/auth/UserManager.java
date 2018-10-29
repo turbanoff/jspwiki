@@ -106,7 +106,7 @@ public class UserManager {
     // private static final String  PROP_ACLMANAGER     = "jspwiki.aclManager";
 
     /** Associates wiki sessions with profiles */
-    private final Map<WikiSession,UserProfile> m_profiles = new WeakHashMap<WikiSession,UserProfile>();
+    private final Map<WikiSession,UserProfile> m_profiles = new WeakHashMap<>();
 
     /** The user database loads, manages and persists user identities */
     private UserDatabase     m_database;

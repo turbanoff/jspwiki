@@ -95,7 +95,7 @@ public class WikiDocument extends Document
      */
     public void setContext( WikiContext ctx )
     {
-        m_context = new WeakReference<WikiContext>( ctx );
+        m_context = new WeakReference<>(ctx);
     }
     
     /**

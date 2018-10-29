@@ -495,7 +495,7 @@ public class AttachmentServlet extends HttpServlet {
             String   wikipage   = null;
             String   changeNote = null;
             //FileItem actualFile = null;
-            List<FileItem> fileItems = new java.util.ArrayList<FileItem>();
+            List<FileItem> fileItems = new java.util.ArrayList<>();
 
             for( FileItem item : items )
             {

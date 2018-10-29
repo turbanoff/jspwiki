@@ -57,7 +57,7 @@ public final class ClassUtil {
      */
     public  static final String MAPPINGS = "ini/classmappings.xml";
     
-    private static Map<String, String> c_classMappings = new Hashtable<String, String>();
+    private static Map<String, String> c_classMappings = new Hashtable<>();
 
     private static boolean classLoaderSetup = false;
     private static ClassLoader loader = null;
@@ -183,7 +183,7 @@ public final class ClassUtil {
      */
     public static List< String > classpathEntriesUnder( final String rootPackage ) 
     {
-        List< String > results = new ArrayList< String >();
+        List< String > results = new ArrayList<>();
         Enumeration< URL > en = null;
         if( StringUtils.isNotEmpty( rootPackage ) ) {
             try

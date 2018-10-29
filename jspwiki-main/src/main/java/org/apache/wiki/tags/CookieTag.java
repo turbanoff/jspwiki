@@ -325,7 +325,7 @@ public class CookieTag
      */
     private Map<String, String> parseCookieValues( String s )
     {
-        Map< String, String > rval = new HashMap< String, String >();
+        Map< String, String > rval = new HashMap<>();
         if( s == null ) {
             return rval;
         }

@@ -37,7 +37,7 @@ public class DecisionQueue implements Serializable
 {
     private static final long serialVersionUID = -7172912793410302533L;
 
-    private LinkedList<Decision> m_queue = new LinkedList<Decision>();
+    private LinkedList<Decision> m_queue = new LinkedList<>();
 
     private volatile int m_next;
 
@@ -97,7 +97,7 @@ public class DecisionQueue implements Serializable
      */
     public Collection getActorDecisions(WikiSession session)
     {
-        ArrayList<Decision> decisions = new ArrayList<Decision>();
+        ArrayList<Decision> decisions = new ArrayList<>();
         if ( session.isAuthenticated() )
         {
             Principal[] principals = session.getPrincipals();

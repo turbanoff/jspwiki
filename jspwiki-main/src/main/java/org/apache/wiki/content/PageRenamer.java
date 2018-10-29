@@ -248,7 +248,7 @@ public class PageRenamer
 
     private Set<String> getReferencesToChange( WikiPage fromPage, WikiEngine engine )
     {
-        Set<String> referrers = new TreeSet<String>();
+        Set<String> referrers = new TreeSet<>();
         
         Collection<String> r = engine.getReferenceManager().findReferrers( fromPage.getName() );
         if( r != null ) referrers.addAll( r );

@@ -55,8 +55,8 @@ public class UserDatabaseLoginModuleTest
             CallbackHandler handler = new WikiCallbackHandler( m_engine, null, "user", "password" );
             LoginModule module = new UserDatabaseLoginModule();
             module.initialize( m_subject, handler,
-                              new HashMap<String, Object>(),
-                              new HashMap<String, Object>() );
+                    new HashMap<>(),
+                    new HashMap<>() );
             module.login();
             module.commit();
             Set< Principal > principals = m_subject.getPrincipals();
@@ -70,8 +70,8 @@ public class UserDatabaseLoginModuleTest
             handler = new WikiCallbackHandler( m_engine, null, "janne", "myP@5sw0rd" );
             module = new UserDatabaseLoginModule();
             module.initialize( m_subject, handler,
-                              new HashMap<String, Object>(),
-                              new HashMap<String, Object>() );
+                              new HashMap<>(),
+                              new HashMap<>() );
             module.login();
             module.commit();
             principals = m_subject.getPrincipals();
@@ -94,8 +94,8 @@ public class UserDatabaseLoginModuleTest
             CallbackHandler handler = new WikiCallbackHandler( m_engine, null, "user", "password" );
             LoginModule module = new UserDatabaseLoginModule();
             module.initialize( m_subject, handler,
-                              new HashMap<String, Object>(),
-                              new HashMap<String, Object>() );
+                              new HashMap<>(),
+                              new HashMap<>() );
             module.login();
             module.commit();
             Set< Principal > principals = m_subject.getPrincipals();

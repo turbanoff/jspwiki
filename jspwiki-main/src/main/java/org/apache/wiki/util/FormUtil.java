@@ -61,7 +61,7 @@ public final class FormUtil
         Object entry = params.get( key );
         if( entry != null )
         {
-            ArrayList<Object> rval = new ArrayList<Object>(1);
+            ArrayList<Object> rval = new ArrayList<>(1);
             rval.add( entry );
             return rval;
         }
@@ -90,7 +90,7 @@ public final class FormUtil
      */
     public static List getNumberedValues( Map params, String keyPrefix )
     {
-        ArrayList<Object> rval = new ArrayList<Object>();
+        ArrayList<Object> rval = new ArrayList<>();
         if( params == null || 
             params.size() == 0 || 
             keyPrefix == null || 
@@ -140,7 +140,7 @@ public final class FormUtil
     public static Map< String, String > requestToMap( HttpServletRequest req, 
                                                       String filterPrefix )
     {
-        HashMap<String,String> params = new HashMap<String,String>();
+        HashMap<String,String> params = new HashMap<>();
         
         if( filterPrefix == null ) filterPrefix = "";
         

@@ -91,7 +91,7 @@ public class RPCHandler
     {
         checkPermission( PagePermission.VIEW );
         Collection< WikiPage > pages = m_engine.getRecentChanges();
-        Vector<String> result = new Vector<String>();
+        Vector<String> result = new Vector<>();
 
         for( WikiPage p : pages )
         {
@@ -109,7 +109,7 @@ public class RPCHandler
      */
     protected Hashtable<String,Object> encodeWikiPage( WikiPage page )
     {
-        Hashtable<String, Object> ht = new Hashtable<String, Object>();
+        Hashtable<String, Object> ht = new Hashtable<>();
 
         ht.put( "name", toRPCString(page.getName()) );
 
@@ -143,7 +143,7 @@ public class RPCHandler
     {
         checkPermission( PagePermission.VIEW );
         Collection< WikiPage > pages = m_engine.getRecentChanges();
-        Vector<Hashtable<String, Object>> result = new Vector<Hashtable<String, Object>>();
+        Vector<Hashtable<String, Object>> result = new Vector<>();
 
         Calendar cal = Calendar.getInstance();
         cal.setTime( since );
@@ -262,7 +262,7 @@ public class RPCHandler
                              extCollector,
                              attCollector );
 
-        Vector<Hashtable<String, String>> result = new Vector<Hashtable<String, String>>();
+        Vector<Hashtable<String, String>> result = new Vector<>();
 
         //
         //  Add local links.
@@ -270,7 +270,7 @@ public class RPCHandler
         for( Iterator< String > i = localCollector.getLinks().iterator(); i.hasNext(); )
         {
             String link = i.next();
-            Hashtable< String, String > ht = new Hashtable<String, String>();
+            Hashtable< String, String > ht = new Hashtable<>();
             ht.put( "page", toRPCString( link ) );
             ht.put( "type", LINK_LOCAL );
 
@@ -304,7 +304,7 @@ public class RPCHandler
         {
             String link = i.next();
 
-            Hashtable< String, String > ht = new Hashtable< String, String >();
+            Hashtable< String, String > ht = new Hashtable<>();
 
             ht.put( "page", toRPCString( link ) );
             ht.put( "type", LINK_LOCAL );
@@ -322,7 +322,7 @@ public class RPCHandler
         {
             String link = i.next();
 
-            Hashtable< String, String > ht = new Hashtable< String, String >();
+            Hashtable< String, String > ht = new Hashtable<>();
 
             ht.put( "page", link );
             ht.put( "type", LINK_EXTERNAL );

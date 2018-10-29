@@ -111,7 +111,7 @@ public class XMLGroupDatabase implements GroupDatabase
 
     private WikiEngine            m_engine         = null;
 
-    private Map<String, Group>                   m_groups         = new HashMap<String, Group>();
+    private Map<String, Group>                   m_groups         = new HashMap<>();
 
     /**
      * No-op method that in previous versions of JSPWiki was intended to

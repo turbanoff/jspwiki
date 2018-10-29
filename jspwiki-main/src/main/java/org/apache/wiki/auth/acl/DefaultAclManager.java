@@ -236,7 +236,7 @@ public class DefaultAclManager implements AclManager {
      */
     protected static String printAcl(Acl acl) {
         // Extract the ACL entries into a Map with keys == permissions, values == principals
-        Map<String, List<Principal>> permissionPrincipals = new TreeMap<String, List<Principal>>();
+        Map<String, List<Principal>> permissionPrincipals = new TreeMap<>();
         Enumeration<AclEntry> entries = acl.entries();
         while (entries.hasMoreElements()) {
             AclEntry entry = entries.nextElement();
@@ -246,7 +246,7 @@ public class DefaultAclManager implements AclManager {
                 Permission permission = permissions.nextElement();
                 List<Principal> principals = permissionPrincipals.get(permission.getActions());
                 if (principals == null) {
-                    principals = new ArrayList<Principal>();
+                    principals = new ArrayList<>();
                     String action = permission.getActions();
                     if (action.indexOf(',') != -1) {
                         throw new IllegalStateException("AclEntry permission cannot have multiple targets.");

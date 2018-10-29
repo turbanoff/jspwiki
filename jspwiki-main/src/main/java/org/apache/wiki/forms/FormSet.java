@@ -86,7 +86,7 @@ public class FormSet
         //  modify the original param string.
         //
         info.setName( formName );
-        Map< String, String > hm = new HashMap< String, String >();
+        Map< String, String > hm = new HashMap<>();
         hm.putAll( params );
         
         hm.remove( FormElement.PARAM_FORM );

@@ -219,7 +219,7 @@ public class UserProfileTag extends WikiTagBase
     public static String printGroups( WikiContext context )
     {
         Principal[] roles = context.getWikiSession().getRoles();
-        List<String> tempRoles = new ArrayList<String>();
+        List<String> tempRoles = new ArrayList<>();
         ResourceBundle rb = Preferences.getBundle( context, InternationalizationManager.CORE_BUNDLE );
         
         for ( Principal role : roles )
@@ -260,7 +260,7 @@ public class UserProfileTag extends WikiTagBase
     public static String printRoles( WikiContext context )
     {
         Principal[] roles = context.getWikiSession().getRoles();
-        List<String> tempRoles = new ArrayList<String>();
+        List<String> tempRoles = new ArrayList<>();
         ResourceBundle rb = Preferences.getBundle( context, InternationalizationManager.CORE_BUNDLE );
         
         for ( Principal role : roles )

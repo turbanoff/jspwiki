@@ -81,7 +81,7 @@ public class SessionsPlugin
             Principal[] principals = WikiSession.userPrincipals(engine);
             // we do not assume that the principals are sorted, so first count
             // them :
-            HashMap<String,Integer> distinctPrincipals = new HashMap<String,Integer>();
+            HashMap<String,Integer> distinctPrincipals = new HashMap<>();
             for (int i = 0; i < principals.length; i++)
             {
                 String principalName = principals[i].getName();

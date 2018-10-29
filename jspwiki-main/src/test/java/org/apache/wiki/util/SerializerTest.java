@@ -31,7 +31,7 @@ public class SerializerTest {
     @Test
     public void testSerializeMap() throws Exception
     {
-        Map<String, Serializable> map = new HashMap<String, Serializable>();
+        Map<String, Serializable> map = new HashMap<>();
         map.put( "attribute1", "some random value" );
         map.put( "attribute2", "another value" );
         String serializedForm = Serializer.serializeToBase64( map );

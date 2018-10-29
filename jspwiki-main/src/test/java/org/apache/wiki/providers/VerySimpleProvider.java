@@ -112,7 +112,7 @@ public class VerySimpleProvider implements WikiPageProvider
      */
     public Collection getAllPages()
     {
-        Vector<WikiPage> v = new Vector<WikiPage>();
+        Vector<WikiPage> v = new Vector<>();
         v.add( getPageInfo( PAGENAME, 5 ) );
         return v;
     }

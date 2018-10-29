@@ -33,8 +33,8 @@ import org.apache.wiki.Release;
  */
 public class TranslationsCheck
 {
-    private static final TreeSet<String> allProps = new TreeSet<String>();  // sorted, no duplicates
-    private static final TreeSet<String> duplProps = new TreeSet<String>();
+    private static final TreeSet<String> allProps = new TreeSet<>();  // sorted, no duplicates
+    private static final TreeSet<String> duplProps = new TreeSet<>();
 
     // Change these to your settings...
     static String base = ".";
@@ -163,7 +163,7 @@ public class TranslationsCheck
             System.out.println();
         }
 
-        Map< String, Integer > diff = new HashMap< String, Integer >( 2 );
+        Map< String, Integer > diff = new HashMap<>(2);
         diff.put( "missing", missing );
         diff.put( "outdated", outdated );
         return diff;
@@ -171,7 +171,7 @@ public class TranslationsCheck
 
     private static List<String> sortedNames(Properties p)
     {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         Enumeration<?> iter = p.propertyNames();
         while (iter.hasMoreElements())
         {

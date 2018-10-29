@@ -27,7 +27,7 @@ import java.util.Collection;
  */
 public class LinkCollector implements StringTransmutator {
 	
-    private ArrayList< String > m_items = new ArrayList< String >();
+    private ArrayList< String > m_items = new ArrayList<>();
 
     /**
      * Returns a List of Strings representing links.

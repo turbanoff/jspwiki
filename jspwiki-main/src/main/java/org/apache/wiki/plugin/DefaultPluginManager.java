@@ -167,9 +167,9 @@ public class DefaultPluginManager extends ModuleManager implements PluginManager
 
     private static final String DEFAULT_FORMS_PACKAGE = "org.apache.wiki.forms";
 
-    private ArrayList<String> m_searchPath = new ArrayList<String>();
+    private ArrayList<String> m_searchPath = new ArrayList<>();
 
-    private ArrayList<String> m_externalJars = new ArrayList<String>();
+    private ArrayList<String> m_externalJars = new ArrayList<>();
 
     private Pattern m_pluginPattern;
 
@@ -178,7 +178,7 @@ public class DefaultPluginManager extends ModuleManager implements PluginManager
     /**
      *  Keeps a list of all known plugin classes.
      */
-    private Map<String, WikiPluginInfo> m_pluginClassMap = new HashMap<String, WikiPluginInfo>();
+    private Map<String, WikiPluginInfo> m_pluginClassMap = new HashMap<>();
 
     /**
      *  Create a new PluginManager.
@@ -378,7 +378,7 @@ public class DefaultPluginManager extends ModuleManager implements PluginManager
      * @throws IOException If the parsing fails.
      */
     public Map< String, String > parseArgs( String argstring ) throws IOException {
-        Map< String, String > arglist = new HashMap< String, String >();
+        Map< String, String > arglist = new HashMap<>();
 
         //
         //  Protection against funny users.

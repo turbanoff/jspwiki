@@ -64,8 +64,8 @@ public class CookieAssertionLoginModuleTest
             CallbackHandler handler = new WebContainerCallbackHandler( m_engine, request );
             LoginModule module = new CookieAssertionLoginModule();
             module.initialize( m_subject, handler,
-                              new HashMap<String, Object>(),
-                              new HashMap<String, Object>() );
+                              new HashMap<>(),
+                              new HashMap<>() );
             module.login();
             module.commit();
             Set< Principal > principals = m_subject.getPrincipals();
@@ -91,8 +91,8 @@ public class CookieAssertionLoginModuleTest
             CallbackHandler handler = new WebContainerCallbackHandler( m_engine, request );
             LoginModule module = new CookieAssertionLoginModule();
             module.initialize( m_subject, handler,
-                              new HashMap<String, Object>(),
-                              new HashMap<String, Object>() );
+                              new HashMap<>(),
+                              new HashMap<>() );
             module.login();
             module.commit();
             Set< Principal > principals = m_subject.getPrincipals();

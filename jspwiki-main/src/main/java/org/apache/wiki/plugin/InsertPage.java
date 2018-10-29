@@ -130,7 +130,7 @@ public class InsertPage
                 }
                 else
                 {
-                    previousIncludes = new ArrayList<String>();
+                    previousIncludes = new ArrayList<>();
                 }
 
                 previousIncludes.add( page.getName() );

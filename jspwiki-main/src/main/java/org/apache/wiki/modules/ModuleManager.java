@@ -82,7 +82,7 @@ public abstract class ModuleManager
     public abstract Collection modules();
 
     protected < T extends WikiModuleInfo > Collection< WikiModuleInfo > modules( Iterator< T > iterator ) {
-        Set< WikiModuleInfo > ls = new TreeSet< WikiModuleInfo >();
+        Set< WikiModuleInfo > ls = new TreeSet<>();
 
         for( Iterator< T > i = iterator; i.hasNext(); ) {
             WikiModuleInfo wmi = i.next();

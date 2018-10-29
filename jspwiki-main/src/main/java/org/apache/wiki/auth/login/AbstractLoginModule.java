@@ -182,10 +182,10 @@ public abstract class AbstractLoginModule implements LoginModule
      */
     public final void initialize( Subject subject, CallbackHandler callbackHandler, Map<String,?> sharedState, Map<String,?> options )
     {
-        m_previousWikiPrincipals = new HashSet<Principal>();
-        m_principals = new HashSet<Principal>();
-        m_principalsToRemove = new HashSet<Principal>();
-        m_principalsToOverwrite = new HashSet<Principal>();
+        m_previousWikiPrincipals = new HashSet<>();
+        m_principals = new HashSet<>();
+        m_principalsToRemove = new HashSet<>();
+        m_principalsToOverwrite = new HashSet<>();
         m_subject = subject;
         m_handler = callbackHandler;
         m_state = sharedState;

@@ -34,7 +34,7 @@ import org.apache.wiki.auth.permissions.PagePermission;
 public class AclEntryImpl implements AclEntry, Serializable
 {
     private static final long serialVersionUID = 1L;
-    private Vector<Permission>    m_permissions = new Vector<Permission>();
+    private Vector<Permission>    m_permissions = new Vector<>();
     private Principal m_principal;
 
     /**

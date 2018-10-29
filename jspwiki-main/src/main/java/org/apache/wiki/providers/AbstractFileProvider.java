@@ -364,7 +364,7 @@ public abstract class AbstractFileProvider
     {
         log.debug("Getting all pages...");
 
-        ArrayList<WikiPage> set = new ArrayList<WikiPage>();
+        ArrayList<WikiPage> set = new ArrayList<>();
 
         File wikipagedir = new File( m_pageDirectory );
 
@@ -430,7 +430,7 @@ public abstract class AbstractFileProvider
     public Collection findPages( QueryItem[] query )
     {
         File wikipagedir = new File( m_pageDirectory );
-        TreeSet<SearchResult> res = new TreeSet<SearchResult>( new SearchResultComparator() );
+        TreeSet<SearchResult> res = new TreeSet<>(new SearchResultComparator());
         SearchMatcher matcher = new SearchMatcher( m_engine, query );
 
         File[] wikipages = wikipagedir.listFiles( new WikiFileFilter() );
@@ -505,7 +505,7 @@ public abstract class AbstractFileProvider
     public List getVersionHistory( String page )
         throws ProviderException
     {
-        ArrayList<WikiPage> list = new ArrayList<WikiPage>();
+        ArrayList<WikiPage> list = new ArrayList<>();
 
         list.add( getPageInfo( page, WikiPageProvider.LATEST_VERSION ) );
 

@@ -189,7 +189,7 @@ public class PluginContent extends Text {
 
                 WikiEngine engine = context.getEngine();
 
-                Map<String, String> parsedParams = new HashMap<String, String>();
+                Map<String, String> parsedParams = new HashMap<>();
 
                 //
                 //  Parse any variable instances from the string

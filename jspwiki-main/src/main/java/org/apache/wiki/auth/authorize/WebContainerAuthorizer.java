@@ -327,7 +327,7 @@ public class WebContainerAuthorizer implements WebAuthorizer
      */
     protected Role[] getRoles( Document webxml ) throws JDOMException
     {
-        Set<Role> roles = new HashSet<Role>();
+        Set<Role> roles = new HashSet<>();
         Element root = webxml.getRootElement();
 
         // Get roles referred to by constraints

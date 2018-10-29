@@ -68,7 +68,7 @@ public class AclImplTest
 
         m_acl = new AclImpl();
         m_aclGroup = new AclImpl();
-        m_groups = new HashMap<String, Group>();
+        m_groups = new HashMap<>();
         Principal uAlice = new WikiPrincipal( "Alice" );
         Principal uBob = new WikiPrincipal( "Bob" );
         Principal uCharlie = new WikiPrincipal( "Charlie" );

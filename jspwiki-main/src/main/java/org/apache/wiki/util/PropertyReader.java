@@ -284,7 +284,7 @@ public final class PropertyReader {
      */
     public static void expandVars(Properties properties) {
         //get variable name/values from properties...
-        Map< String, String > vars = new HashMap< String, String >();
+        Map< String, String > vars = new HashMap<>();
         Enumeration< ? > propertyList = properties.propertyNames();
         while( propertyList.hasMoreElements() ) {
             String propertyName = ( String )propertyList.nextElement();

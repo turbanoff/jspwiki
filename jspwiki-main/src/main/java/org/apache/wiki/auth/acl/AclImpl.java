@@ -32,7 +32,7 @@ import java.util.Vector;
 public class AclImpl implements Acl, Serializable
 {
     private static final long serialVersionUID = 1L;
-    private final Vector<AclEntry> m_entries = new Vector<AclEntry>();
+    private final Vector<AclEntry> m_entries = new Vector<>();
 
     /**
      * Constructs a new AclImpl instance.
@@ -51,7 +51,7 @@ public class AclImpl implements Acl, Serializable
      */
     public Principal[] findPrincipals( Permission permission )
     {
-        Vector<Principal> principals = new Vector<Principal>();
+        Vector<Principal> principals = new Vector<>();
         Enumeration<AclEntry> entries = entries();
         
         while (entries.hasMoreElements()) 

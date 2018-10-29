@@ -793,7 +793,7 @@ public class XHtmlElementToWikiTranslator
      */
     private Map getAugmentedWikiLinkAttributes( Element a )
     {
-        Map<String,String> attributesMap = new HashMap<String,String>();
+        Map<String,String> attributesMap = new HashMap<>();
 
         String id = a.getAttributeValue( "id" );
         if( id != null && !id.equals( "" ) )

@@ -80,8 +80,8 @@ public final class CommandResolver
     /** Store the JSP-to-Command and context-to-Command mappings */
     static
     {
-        CONTEXTS = new HashMap<String, Command>();
-        JSPS = new HashMap<String, Command>();
+        CONTEXTS = new HashMap<>();
+        JSPS = new HashMap<>();
         Command[] commands = AbstractCommand.allCommands();
         for( int i = 0; i < commands.length; i++ )
         {
@@ -110,7 +110,7 @@ public final class CommandResolver
     public CommandResolver( WikiEngine engine, Properties properties )
     {
         m_engine = engine;
-        m_specialPages = new HashMap<String, Command>();
+        m_specialPages = new HashMap<>();
 
         // Skim through the properties and look for anything with
         // the "special page" prefix. Create maps that allow us

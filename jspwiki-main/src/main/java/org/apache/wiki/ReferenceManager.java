@@ -191,7 +191,7 @@ public class ReferenceManager
         String content = m_engine.getPageManager().getPageText( page.getName(),
                                                                 WikiPageProvider.LATEST_VERSION );
 
-        TreeSet<String> res = new TreeSet<String>();
+        TreeSet<String> res = new TreeSet<>();
         Collection<String> links = m_engine.scanWikiLinks( page, content );
 
         res.addAll( links );
@@ -698,7 +698,7 @@ public class ReferenceManager
         Collection< String > oldRefTo = m_refersTo.get( page );
         m_refersTo.remove( page );
 
-        TreeSet<String> cleanedRefs = new TreeSet<String>();
+        TreeSet<String> cleanedRefs = new TreeSet<>();
         for( Iterator< String > i = references.iterator(); i.hasNext(); )
         {
             String ref = i.next();
@@ -717,7 +717,7 @@ public class ReferenceManager
         //
         if( !m_referredBy.containsKey( page ) )
         {
-            m_referredBy.put( page, new TreeSet<String>() );
+            m_referredBy.put( page, new TreeSet<>() );
         }
 
         //
@@ -826,7 +826,7 @@ public class ReferenceManager
             {
                 WikiPage page = it.next();
                 // We add a non-null entry to referredBy to indicate the referred page exists
-                m_referredBy.put( page.getName(), new TreeSet<String>() );
+                m_referredBy.put( page.getName(), new TreeSet<>() );
                 // Just add a key to refersTo; the keys need to be in sync with referredBy.
                 m_refersTo.put( page.getName(), null );
             }
@@ -873,7 +873,7 @@ public class ReferenceManager
         // pages, of course.
         if(referrers == null)
         {
-            referrers = new TreeSet<String>();
+            referrers = new TreeSet<>();
             m_referredBy.put( page, referrers );
         }
         referrers.add( referrer );
@@ -921,7 +921,7 @@ public class ReferenceManager
      */
     public synchronized Collection< String > findUnreferenced()
     {
-        ArrayList<String> unref = new ArrayList<String>();
+        ArrayList<String> unref = new ArrayList<>();
 
         for( String key : m_referredBy.keySet() )
         {
@@ -951,7 +951,7 @@ public class ReferenceManager
      */
     public synchronized Collection< String > findUncreated()
     {
-        TreeSet<String> uncreated = new TreeSet<String>();
+        TreeSet<String> uncreated = new TreeSet<>();
 
         // Go through m_refersTo values and check that m_refersTo has the corresponding keys.
         // We want to reread the code to make sure our HashMaps are in sync...
@@ -1133,7 +1133,7 @@ public class ReferenceManager
      */
     public Set< String > findCreated()
     {
-        return new HashSet<String>( m_refersTo.keySet() );
+        return new HashSet<>(m_refersTo.keySet());
     }
 
     private String getFinalPageName( String orig )

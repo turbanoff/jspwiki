@@ -259,7 +259,7 @@ public abstract class AbstractReferralPlugin implements WikiPlugin
      */
     protected Collection filterCollection( Collection c )
     {
-        ArrayList<Object> result = new ArrayList<Object>();
+        ArrayList<Object> result = new ArrayList<>();
 
         PatternMatcher pm = new Perl5Matcher();
 

@@ -50,7 +50,7 @@ import javax.naming.spi.InitialContextFactory;
 public class TestJNDIContext implements Context
 {
 
-    private final Map<String, Object> m_bindings  = new HashMap<String, Object>();
+    private final Map<String, Object> m_bindings  = new HashMap<>();
 
     private static boolean initialized = false;
 

@@ -151,10 +151,10 @@ public final class WikiEventManager
     private static WikiEventListener c_monitor = null;
 
     /* The Map of client object to WikiEventDelegate. */
-    private final Map<Object, WikiEventDelegate> m_delegates = new HashMap<Object, WikiEventDelegate>();
+    private final Map<Object, WikiEventDelegate> m_delegates = new HashMap<>();
 
     /* The Vector containing any preloaded WikiEventDelegates. */
-    private final Vector<WikiEventDelegate> m_preloadCache = new Vector<WikiEventDelegate>();
+    private final Vector<WikiEventDelegate> m_preloadCache = new Vector<>();
 
     /* Singleton instance of the WikiEventManager. */
     private static WikiEventManager c_instance = null;
@@ -430,7 +430,7 @@ public final class WikiEventManager
     {
         /* A list of event listeners for this instance. */
 
-        private ArrayList<WeakReference<WikiEventListener>> m_listenerList = new ArrayList<WeakReference<WikiEventListener>>();
+        private ArrayList<WeakReference<WikiEventListener>> m_listenerList = new ArrayList<>();
 
         private Class  m_class  = null;
 
@@ -470,7 +470,7 @@ public final class WikiEventManager
         {
             synchronized( m_listenerList )
             {
-                TreeSet<WikiEventListener> set = new TreeSet<WikiEventListener>( new WikiEventListenerComparator() );
+                TreeSet<WikiEventListener> set = new TreeSet<>(new WikiEventListenerComparator());
 
                 for( Iterator i = m_listenerList.iterator(); i.hasNext(); )
                 {
@@ -497,7 +497,7 @@ public final class WikiEventManager
         {
             synchronized( m_listenerList )
             {
-                return m_listenerList.add( new WeakReference<WikiEventListener>(listener) );
+                return m_listenerList.add(new WeakReference<>(listener) );
             }
         }
 

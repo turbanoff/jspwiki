@@ -196,11 +196,11 @@ public class SpamFilter extends BasicPageFilter {
     private static  Logger  log = Logger.getLogger( SpamFilter.class );
 
 
-    private Vector<Host>    m_temporaryBanList = new Vector<Host>();
+    private Vector<Host>    m_temporaryBanList = new Vector<>();
 
     private int             m_banTime = 60; // minutes
 
-    private Vector<Host>    m_lastModifications = new Vector<Host>();
+    private Vector<Host>    m_lastModifications = new Vector<>();
 
     /**
      *  How many times a single IP address can change a page per minute?
@@ -392,7 +392,7 @@ public class SpamFilter extends BasicPageFilter {
      * @return A Collection of the Patterns that were found from the lists.
      */
     private Collection< Pattern > parseWordList( WikiPage source, String list ) {
-        ArrayList< Pattern > compiledpatterns = new ArrayList< Pattern >();
+        ArrayList< Pattern > compiledpatterns = new ArrayList<>();
 
         if( list != null ) {
             StringTokenizer tok = new StringTokenizer( list, " \t\n" );
@@ -419,7 +419,7 @@ public class SpamFilter extends BasicPageFilter {
      *  @return The parsed blacklist patterns.
      */
     private Collection< Pattern > parseBlacklist( String list ) {
-        ArrayList< Pattern > compiledpatterns = new ArrayList< Pattern >();
+        ArrayList< Pattern > compiledpatterns = new ArrayList<>();
 
         if( list != null ) {
             try {

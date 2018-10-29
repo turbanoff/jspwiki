@@ -83,7 +83,7 @@ public class PingWeblogsComFilter
         try
         {
             XmlRpcClient xmlrpc = new XmlRpcClient(m_pingURL);
-            Vector<String> params = new Vector<String>();
+            Vector<String> params = new Vector<>();
             params.addElement( "The Butt Ugly Weblog" ); // FIXME: Must be settable
             params.addElement( engine.getURL( WikiContext.VIEW, blogName, null, true ) );
 

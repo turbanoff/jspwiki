@@ -94,9 +94,9 @@ import org.jdom2.Element;
  */
 public class DefaultFilterManager extends ModuleManager implements FilterManager {
 
-    private PriorityList< PageFilter > m_pageFilters = new PriorityList< PageFilter >();
+    private PriorityList< PageFilter > m_pageFilters = new PriorityList<>();
 
-    private Map< String, PageFilterInfo > m_filterClassMap = new HashMap< String, PageFilterInfo >();
+    private Map< String, PageFilterInfo > m_filterClassMap = new HashMap<>();
 
     private static final Logger log = Logger.getLogger(DefaultFilterManager.class);
 

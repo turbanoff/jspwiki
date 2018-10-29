@@ -43,7 +43,7 @@ import org.apache.wiki.ajax.WikiAjaxServlet;
 // FIXME: Needs synchronization, I think
 public class ProgressManager
 {
-    private Map<String,ProgressItem> m_progressingTasks = new HashMap<String,ProgressItem>();
+    private Map<String,ProgressItem> m_progressingTasks = new HashMap<>();
 
     /**
      *  The name of the progress tracker JSON object.  The current value is "{@value}",

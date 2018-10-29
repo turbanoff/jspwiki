@@ -57,7 +57,7 @@ public class ProfanityFilter extends BasicPageFilter {
             }
             
             br = new BufferedReader( new InputStreamReader( in ) );
-            List< String > profs = new ArrayList< String >();
+            List< String > profs = new ArrayList<>();
             
             String str;
             while ( ( str = br.readLine() ) != null ) {

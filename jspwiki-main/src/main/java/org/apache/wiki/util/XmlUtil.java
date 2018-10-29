@@ -64,7 +64,7 @@ public final class XmlUtil
 	public static List<Element> parse( String xml, String requestedNodes )
 	{
 		if( StringUtils.isNotEmpty( xml ) && StringUtils.isNotEmpty( requestedNodes ) ) {
-			Set<Element> readed = new HashSet<Element>();
+			Set<Element> readed = new HashSet<>();
 			SAXBuilder builder = new SAXBuilder();
 			try {
 				Enumeration< URL > resources = XmlUtil.class.getClassLoader().getResources( xml );
@@ -76,7 +76,7 @@ public final class XmlUtil
 	                XPathExpression<Element> xp = xpfac.compile( requestedNodes, Filters.element() );
 	                readed.addAll( xp.evaluate( doc ) ); // filter out repeated items
 	            }
-				return new ArrayList<Element>( readed );
+				return new ArrayList<>(readed);
 			} catch ( IOException ioe ) {
 				log.error( "Couldn't load all " + xml + " resources", ioe );
 			} catch ( JDOMException jdome ) {

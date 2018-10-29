@@ -192,7 +192,7 @@ public class FormInfo implements Serializable {
      * @param val parameter name-value pairs for a Form handler WikiPlugin
      */
     public void setSubmission(Map<String, String> val) {
-        m_submission = new HashMap<String, String>();
+        m_submission = new HashMap<>();
         m_submission.putAll(val);
     }
 
@@ -203,7 +203,7 @@ public class FormInfo implements Serializable {
      */
     public void addSubmission(Map<String, String> val) {
         if (m_submission == null) {
-            m_submission = new HashMap<String, String>();
+            m_submission = new HashMap<>();
         }
         m_submission.putAll(val);
     }

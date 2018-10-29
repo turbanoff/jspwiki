@@ -162,9 +162,9 @@ public class CreoleToJSPWikiTranslator
 
     private static final String ESCAPE_PROTECTED = "~(\\*\\*|~|//|-|#|\\{\\{|}}|\\\\|~\\[~~[|]]|----|=|\\|)";
 
-    private static Map<String, String> c_protectionMap = new HashMap<String, String>();
+    private static Map<String, String> c_protectionMap = new HashMap<>();
 
-    private        ArrayList<String> m_hashList = new ArrayList<String>();
+    private        ArrayList<String> m_hashList = new ArrayList<>();
 
     /**
      *  I have no idea what this method does.  Could someone please tell me?
@@ -382,7 +382,7 @@ public class CreoleToJSPWikiTranslator
     private String protectMarkup(String content)
     {
         c_protectionMap.clear();
-        m_hashList = new ArrayList<String>();
+        m_hashList = new ArrayList<>();
         content = protectMarkup(content, PREFORMATTED_PROTECTED, "", "");
         content = protectMarkup(content, URL_PROTECTED, "", "");
         content = protectMarkup(content, ESCAPE_PROTECTED, "", "");
@@ -397,7 +397,7 @@ public class CreoleToJSPWikiTranslator
     {
         Set< Object > keySet = wikiProps.keySet();
         Object[] keys = keySet.toArray();
-        ArrayList<String[]> result = new ArrayList<String[]>();
+        ArrayList<String[]> result = new ArrayList<>();
 
         for( int i = 0; i < keys.length; i++ )
         {

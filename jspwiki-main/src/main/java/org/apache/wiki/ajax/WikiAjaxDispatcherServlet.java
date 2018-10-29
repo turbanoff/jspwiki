@@ -49,7 +49,7 @@ import org.apache.wiki.util.TextUtil;
  */
 public class WikiAjaxDispatcherServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static Map<String,AjaxServletContainer> ajaxServlets = new HashMap<String,AjaxServletContainer>();
+    private static Map<String,AjaxServletContainer> ajaxServlets = new HashMap<>();
     static final Logger log = Logger.getLogger(WikiAjaxDispatcherServlet.class.getName());
     private String PATH_AJAX = "/ajax/";
     private WikiEngine m_engine;
@@ -137,7 +137,7 @@ public class WikiAjaxDispatcherServlet extends HttpServlet {
                     log.debug("actionName="+actionName);
                     final Object params = req.getParameter("params");
                     log.debug("params="+params);
-                    List<String> paramValues = new ArrayList<String>();
+                    List<String> paramValues = new ArrayList<>();
                     if (params instanceof String) {
                         final String paramString = (String)params;
                         if (StringUtils.isNotBlank(paramString)) {

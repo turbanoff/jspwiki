@@ -292,7 +292,7 @@ public class WikiEngine
     private AdminBeanManager m_adminBeanManager;
 
     /** Stores wikiengine attributes. */
-    private Map<String,Object> m_attributes = Collections.synchronizedMap(new HashMap<String,Object>());
+    private Map<String,Object> m_attributes = Collections.synchronizedMap(new HashMap<>());
 
     /**
      *  Gets a WikiEngine related to this servlet.  Since this method
@@ -711,7 +711,7 @@ public class WikiEngine
     {
         try
         {
-            ArrayList<WikiPage> pages = new ArrayList<WikiPage>();
+            ArrayList<WikiPage> pages = new ArrayList<>();
             pages.addAll( m_pageManager.getAllPages() );
             pages.addAll( m_attachmentManager.getAllAttachments() );
 
@@ -1011,7 +1011,7 @@ public class WikiEngine
      */
     public Collection< String > getAllInterWikiLinks()
     {
-    	ArrayList< String > list = new ArrayList< String >();
+    	ArrayList< String > list = new ArrayList<>();
 
         for( Enumeration< ? > i = m_properties.propertyNames(); i.hasMoreElements(); )
         {
@@ -1034,7 +1034,7 @@ public class WikiEngine
     public Collection< String > getAllInlinedImagePatterns()
     {
         Properties props    = getWikiProperties();
-        ArrayList<String>  ptrnlist = new ArrayList<String>();
+        ArrayList<String>  ptrnlist = new ArrayList<>();
 
         for( Enumeration< ? > e = props.propertyNames(); e.hasMoreElements(); )
         {
@@ -1819,7 +1819,7 @@ public class WikiEngine
             Collection<WikiPage>   pages = m_pageManager.getAllPages();
             Collection<Attachment>  atts = m_attachmentManager.getAllAttachments();
 
-            TreeSet<WikiPage> sortedPages = new TreeSet<WikiPage>( new PageTimeComparator() );
+            TreeSet<WikiPage> sortedPages = new TreeSet<>(new PageTimeComparator());
 
             sortedPages.addAll( pages );
             sortedPages.addAll( atts );

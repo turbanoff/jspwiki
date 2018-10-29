@@ -60,7 +60,7 @@ public class FormSelect
 
         if ( previousValues == null )
         {
-            previousValues = new HashMap< String, String >();
+            previousValues = new HashMap<>();
         }
 
         Element field = buildSelect( params, previousValues, rb );

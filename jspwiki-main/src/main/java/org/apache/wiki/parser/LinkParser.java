@@ -169,7 +169,7 @@ public class LinkParser
     private static final String TARGET = "target";
     private static final String DELIMS = " \t\n\r\f=";
 
-    private static final List< Attribute > m_EMPTY = new ArrayList< Attribute >();
+    private static final List< Attribute > m_EMPTY = new ArrayList<>();
 
     // ............
 
@@ -521,7 +521,7 @@ public class LinkParser
         {
             if( m_attribs == null )
             {
-                m_attribs = new ArrayList<Attribute>();
+                m_attribs = new ArrayList<>();
             }
             m_attribs.add(attr);
         }

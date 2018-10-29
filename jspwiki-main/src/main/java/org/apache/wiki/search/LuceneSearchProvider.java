@@ -120,7 +120,7 @@ public class LuceneSearchProvider implements SearchProvider {
     protected static final String LUCENE_PAGE_NAME     = "name";
 
     private String           m_luceneDirectory;
-    protected Vector<Object[]> m_updates = new Vector<Object[]>(); // Vector because multi-threaded.
+    protected Vector<Object[]> m_updates = new Vector<>(); // Vector because multi-threaded.
 
     /** Maximum number of fragments from search matches. */
     private static final int MAX_FRAGMENTS = 3;
@@ -653,7 +653,7 @@ public class LuceneSearchProvider implements SearchProvider {
 
             AuthorizationManager mgr = m_engine.getAuthorizationManager();
 
-            list = new ArrayList<SearchResult>(hits.length);
+            list = new ArrayList<>(hits.length);
             for ( int curr = 0; curr < hits.length; curr++ )
             {
                 int docID = hits[curr].doc;

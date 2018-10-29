@@ -80,7 +80,7 @@ public class LinkTag extends WikiLinkTag implements ParamHandler, BodyTag {
         super.initTag();
         m_version = m_cssClass = m_style = m_title = m_target = m_compareToVersion = m_rel = m_jsp = m_ref = m_accesskey = m_templatefile = null;
         m_context = WikiContext.VIEW;
-        m_containedParams = new HashMap<String, String>();
+        m_containedParams = new HashMap<>();
         m_absolute = false;
     }
 
@@ -169,7 +169,7 @@ public class LinkTag extends WikiLinkTag implements ParamHandler, BodyTag {
         {
             if( m_containedParams == null )
             {
-                m_containedParams = new HashMap<String, String>();
+                m_containedParams = new HashMap<>();
             }
             m_containedParams.put( name, value );
         }

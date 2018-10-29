@@ -441,7 +441,7 @@ public class WeblogPlugin
         PageManager mgr = engine.getPageManager();
         Set< String > allPages = engine.getReferenceManager().findCreated();
 
-        ArrayList<WikiPage> result = new ArrayList<WikiPage>();
+        ArrayList<WikiPage> result = new ArrayList<>();
 
         baseName = makeEntryPage( baseName );
 

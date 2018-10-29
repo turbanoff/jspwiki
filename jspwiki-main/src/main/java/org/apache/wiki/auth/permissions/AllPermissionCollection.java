@@ -35,7 +35,7 @@ public class AllPermissionCollection extends PermissionCollection
 
     private boolean           m_readOnly      = false;
 
-    protected final Hashtable<Permission, Permission> m_permissions    = new Hashtable<Permission, Permission>();
+    protected final Hashtable<Permission, Permission> m_permissions    = new Hashtable<>();
 
     /**
      * Adds an AllPermission object to this AllPermissionCollection. If this
